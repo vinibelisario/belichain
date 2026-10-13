@@ -1,8 +1,8 @@
 # belichain
 
-Plataforma local de transferências de crypto (ETH), construída em Go para fins de estudo.
+Local crypto (ETH) transfer platform built in Go, for study purposes.
 
-## Como rodar
+## Getting started
 cp .env.example .env
 make up
 make chain-info

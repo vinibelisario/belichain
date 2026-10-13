@@ -1,10 +1,10 @@
 ## Work item
 AB#
 
-## O que foi feito
+## What was done
 
-## Como testar
+## How to test
 
 ## Checklist
-- [ ] Testes passando localmente
-- [ ] Sem segredos ou .env no commit
+- [ ] Tests passing locally
+- [ ] No secrets or .env committed
