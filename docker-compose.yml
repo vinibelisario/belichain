@@ -1,0 +1,27 @@
+name: belichain
+
+services:
+  anvil:
+    image: ghcr.io/foundry-rs/foundry:${FOUNDRY_VERSION:-v1.3.4}
+    container_name: anvil
+    entrypoint: ["anvil"]
+    command:
+      - --host=0.0.0.0
+      - --port=8545
+      - --chain-id=${ANVIL_CHAIN_ID:-31337}
+      - --mnemonic=${ANVIL_MNEMONIC:?defina ANVIL_MNEMONIC no .env}
+      - --accounts=${ANVIL_ACCOUNTS:-10}
+      - --balance=${ANVIL_BALANCE:-10000}
+    ports:
+      - "${ANVIL_PORT:-8545}:8545"
+    healthcheck:
+      test: ["CMD", "cast", "block-number", "--rpc-url", "http://127.0.0.1:8545"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - belichain-net
+
+networks:
+  belichain-net:
+    name: belichain-net

@@ -1,0 +1,4 @@
+.env
+*:Zone.Identifier
+bin/
+coverage.out
